@@ -1,0 +1,15 @@
+greg NEWS --- history of user-visible changes.
+Copyright (C) 2005 Free Software Foundation, Inc.
+See the end for copying conditions.
+
+Please send greg bug reports to greg-devel@gna.org or 
+
+https://gna.org/bugs/?group=greg-dbi
+
+
+
+Changes in greg 1.5.5:
+
+* Ugraded gnu toolchain
+* Fixed guile api use to more recent releases (and 
+  back compatible with older).

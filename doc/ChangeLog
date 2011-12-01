@@ -1,0 +1,16 @@
+2005-05-09  Maurizio Boriani  <baux@gnu.org>
+
+	* greg.texi: Update mail addresses for bug and suggestions.
+
+2005-03-24  Maurizio Boriani  <baux@gnu.org>
+
+	* greg.texi: Substitute cvs reference with arch for software
+	retrive.
+
+2005-02-23  Maurizio Boriani  <baux@member.fsf.org>
+
+	* gregdoc.texi: Moved and fixed in greg.texi.
+	* version.texi: New, used by greg.texi and updated automagically by
+	automake.
+	* Makefile.in: Moved and fixed in Makefile.am, mostly rewritten.
+	

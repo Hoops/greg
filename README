@@ -1,0 +1,84 @@
+README - info file
+Copyright (C) 2005 Free Software Foundation, Inc.
+Written by Maurizio Boriani <baux@member.fsf.org>
+
+This file is part of the greg.
+ 
+The greg is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+ 
+The greg is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+
+
+* About
+
+ Greg is a framework for testing other programs and libraries.
+ Its purpose is to provide a single front end for all tests and to
+ be a small, simple framework for writing tests.
+ Greg leverages off the Guile language to provide all the power (and more)
+ of other test frameworks with greater simplicity and ease of use.
+
+ Please send bug reports to https://gna.org/bugs/?group=greg or
+ greg-devel@gna.org
+
+* greg dependencies
+
+ greg depends from this packages, need them to build and run:
+	
+	Guile: http://www.gnu.org/software/guile/  
+		The guile scheme implementation
+	libc, gcc and so on...
+ 
+* greg Documentation
+
+ The doc directory contains the reference manual  and some examples.
+
+ The www pages are at http://www.gnu.org/software/greg or
+ http://home.gna.org/greg/
+
+ The project page is at: http://www.gna.org/projects/greg.
+
+* Development versions
+
+ greg source code is mantained using gnu arch. Main archives mirror
+ can be found at:
+
+ archive: baux@member.fsf.org--2005-greg
+ location: http://arch.gna.org/upload/greg/2005-greg
+
+ branches: 
+    greg--baux   (my personal brench)
+    greg--devel  (development, tag to this if you'd like to 
+      contribute)
+    greg--stable (released versions).
+    greg-wpages  (web pages).
+
+ Have a look at gnu arch manuals.    
+
+* greg License
+
+ The greg main script is under GPL License while lib is under LGPL.
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this software; see the file COPYING.  If not, write to
+ the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+ Boston, MA 02111-1307 USA

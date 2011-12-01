@@ -1,0 +1,9 @@
+2005-02-24  Maurizio Boriani  <baux@member.fsf.org>
+
+	* test.sh: Fixed for selftest.
+
+2005-02-23  Maurizio Boriani  <baux@member.fsf.org>
+
+	* Makefile: Moved and rewritten in Makefile.am
+	* test.sh: New simple script for greg self testing.
+	

@@ -1,0 +1,20 @@
+2006-09-25  Maurizio Boriani  <baux@gnu.org>
+
+	* greg.c: Fix deprecated features.
+
+2005-02-24  Maurizio Boriani  <baux@member.fsf.org>
+
+	* greg.c (scm_pty_child): Converted in a snarfable syntax.
+	(scm_init_greg): Include snarfed greg.x if magic snarfer's 
+	undefined. This fix the use of decrecate scm_make_gsubr both
+	in newer and old guile's version.
+	* Makefile.am: Add snarfed greg.x source built.
+
+2005-02-23  Maurizio Boriani  <baux@member.fsf.org>
+
+	* ice-9: New dir.
+	* Makfile.in: Moved and mostry rewritten in Makefile.am.
+	* greg: Fixed dynamic module loading procedure.
+	* grep.scm: Likewise and moved in ice-9.
+	
+	
