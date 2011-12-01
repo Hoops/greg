@@ -281,7 +281,7 @@ SCM_DEFINE (scm_pty_child, "pty-child", 0, 0, 1,
           (void)close(p[1]);
           (void)dup2(1, 2);                /* Send stderr to pty.                */
 
-          if (scm_string_equal_p(prg, gh_str02scm("")) != SCM_BOOL_T)
+          if (scm_string_null_p(prg) != SCM_BOOL_T)
             {
               scm_execl(prg, args);
               exit(1);
@@ -293,7 +293,7 @@ SCM_DEFINE (scm_pty_child, "pty-child", 0, 0, 1,
                *        child, just return a list containing 0 to mark
                *        this as a success (but in the child process).
                */
-              ans = scm_cons(SCM_MAKINUM(0), SCM_EOL);
+              ans = scm_cons(scm_from_int(0), SCM_EOL);
             }
         }
       else
@@ -348,9 +348,9 @@ SCM_DEFINE (scm_pty_child, "pty-child", 0, 0, 1,
               (void)close(p[0]);
               scm_misc_error("pty-child", buf, SCM_EOL);
             }
-          cpid = SCM_MAKINUM(pid);
-          rport = scm_fdopen(SCM_MAKINUM(master), scm_makfrom0str("r"));
-          wport = scm_fdopen(SCM_MAKINUM(master), scm_makfrom0str("w"));
+          cpid = scm_from_int(pid);
+          rport = scm_fdopen(scm_from_int(master), scm_from_locale_string("r"));
+          wport = scm_fdopen(scm_from_int(master), scm_from_locale_string("w"));
           ans = scm_cons(rport, scm_cons(wport, scm_cons(cpid, SCM_EOL)));
         }
     }
@@ -366,7 +366,6 @@ void
 scm_init_greg()
 {
 #ifndef SCM_MAGIC_SNARFER
-#include "greg.x"
+#include "libgreg.x"
 #endif
 }
-
