@@ -26,10 +26,8 @@
 
 
 info_TEXINFOS=greg.texi
-man1_MANS=greg.1
+man1_MANS=gregtool.1
 
 
 EXTRA_DIST = $(man1_MANS) $(info_TEXINFOS)
-
-
 
