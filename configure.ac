@@ -39,11 +39,11 @@ AC_PROG_CPP
 AM_PROG_AS
 AC_PROG_LIBTOOL
 AC_PATH_PROG([GUILESNARF], [guile-snarf], :)
-AC_PATH_PROG([GUILECONFIG], [guile-config], :)
 AC_PATH_PROG([TEXI2HTML],[texi2html],:)
 AC_PATH_PROG([TEXI2DVI], [texi2dvi], :)
 AC_PATH_PROG([MAKEINFO], [makeinfo], :)
 
+GUILE_PROGS
 
 AC_HEADER_STDC
 AC_HEADER_TIME
@@ -68,9 +68,7 @@ AC_SUBST(VERSION)
 # Checks for library functions.
 AC_CONFIG_FILES([Makefile
 		 src/Makefile
-		 src/ice-9/Makefile
 		 test/Makefile
 		 doc/Makefile])	 
 
-
-AC_OUTPUT
+AC_OUTPUT(src/gregtool)

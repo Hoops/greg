@@ -1,4 +1,4 @@
-#!/usr/bin/guile -s
+#!@GUILE@ -s
 !#
 
 ;;;; greg - Regression testing command-line tool

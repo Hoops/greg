@@ -21,7 +21,6 @@
 #                                               -*- Makefile -*-
 # Process this file with autoconf to produce a configure script.
 
-
 AUTOMAKE_OPTIONS = gnu
 SUBDIRS = src doc test
 

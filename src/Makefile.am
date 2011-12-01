@@ -24,27 +24,39 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-
 AUTOMAKE_OPTIONS = gnu 
-SUBDIRS = ice-9
 
-BUILT_SOURCES = greg.x
+SOURCES = \
+	greg.scm
+
+# XXX: This expression relies on a GNU extension.
+GOBJECTS = $(SOURCES:%.scm=%.go)
+
+BUILT_SOURCES = libgreg.x $(GOBJECTS)
 
 SUFFIXES = .x
 .c.x:
 	$(GUILESNARF) $(DEFS) $(INCLUDES) $(CPPFLAFS) $(CFLAGS) $< > $@ \
 	|| { rm $@; false; }
 
+GUILEC_FLAGS = -Wunbound-variable -Warity-mismatch -Wunused-toplevel -Wformat
+
+CLEANFILES = $(GOBJECTS)
+
+.scm.go:
+	GUILE_AUTO_COMPILE=0							\
+	GUILE_LOAD_COMPILED_PATH="$(builddir):$$GUILE_LOAD_COMPILED_PATH"	\
+	guile-tools compile -L "$(srcdir)" $(GUILEC_FLAGS) -o "$@" "$<"
 
 lib_LTLIBRARIES = libgreg.la
 
-libgreg_la_SOURCES = greg.c greg.x
-libgreg_la_LIBADD = -ldl -lz -lguile
+libgreg_la_SOURCES = libgreg.c libgreg.x
+libgreg_la_LIBADD = -ldl -lz `$(GUILECONFIG) link`
 libgreg_la_LDFLAGS = -export-dynamic -version-info @GREG_INTERFACE@
 libgreg_la_DEPENDENCIES = $(LTLIBOBJS)
 
-bin_SCRIPTS = greg
+bin_SCRIPTS = gregtool
 
 EXTRA_DIST = $(bin_SCRIPTS)
 
-CLEANFILES = .log 
+CLEANFILES += .log 
