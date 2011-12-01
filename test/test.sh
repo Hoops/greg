@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # test.sh -- prepare the env and execute a self test
 # Copyright (C) 1998, 2000, 2001, 2003, 2005 Free Software Foundation, Inc.
 # Written by Maurizio Boriani <baux@member.fsf.org>
@@ -24,8 +23,6 @@
 #                                               -*- Makefile -*-
 # Process this file with autoconf to produce a configure script.
 
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../src/.libs
+export LTDL_LIBRARY_PATH=$LTDL_LIBRARY_PATH:../src/.libs
 export GUILE_LOAD_PATH=$GUILE_LOAD_PATH:../src/
-guile -s ../src/greg
-
+guile -s ../src/gregtool
