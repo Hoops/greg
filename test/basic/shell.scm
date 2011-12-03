@@ -24,6 +24,8 @@
 ;
 ;	Start up a shell to talk to.
 ;
+(use-modules (greg))
+
 (greg-child "/bin/sh" "-i")
 
 (greg-testcase "A shell will echo hello" #t

@@ -24,8 +24,6 @@
 #                                               -*- Makefile -*-
 # Process this file with autoconf to produce a configure script.
 
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../src/.libs
+export LTDL_LIBRARY_PATH=$LD_LIBRARY_PATH:../src/.libs
 export GUILE_LOAD_PATH=$GUILE_LOAD_PATH:../src/
-guile -s ../src/greg
-
+guile -s ../src/gregtool

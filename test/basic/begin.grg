@@ -25,7 +25,6 @@
 ;	for us to check.
 ;
 
-(greg-child "/bin/sh" "-c" "greg --outdir tests --tool tests --file greg --verbose")
+(greg-child "/bin/sh" "-c" "gregtool --outdir tests --tool tests --file greg --verbose")
 
-;(greg-child "greg" "--outdir" "tests" "--tool" "tests" "--file" "greg" "--verbose")
-
+;(greg-child "gregtool" "--outdir" "tests" "--tool" "tests" "--file" "greg" "--verbose")

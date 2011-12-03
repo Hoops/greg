@@ -25,6 +25,8 @@
 ;	Test that all possible exits from greg-testcase work as expected.
 ;
 
+(use-modules (greg))
+
 (greg-testcase "We can return an expected pass" #t
 (lambda ()
   (greg-recv ("^PASS: We can return an expected pass" #t))

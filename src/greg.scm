@@ -64,6 +64,7 @@
 (define-module (greg)
   #:version (2 1 0)
   #:use-module (ice-9 expect)
+  #:export-syntax (greg-recv greg-expect-pass greg-expect-fail)
   #:export (greg-version
             greg-debug greg-posix greg-verbose greg-obj-dir greg-out-dir
             greg-src-dir *greg-script-dir* greg-files greg-tools
@@ -793,14 +794,14 @@
 
 ;; Require a child process to produce output matching one of the
 ;; regular expressions in the list.
-(defmacro-public greg-recv clauses
+(define-macro (greg-recv . clauses)
   `(expect-strings ,@clauses))
 
 ;; Shorthand for the most common sort of testcase - the test body
 ;; is expected to pass.
-(defmacro-public greg-expect-pass (assertion body)
+(defmacro greg-expect-pass (assertion body)
   `(greg-testcase ,assertion #t (lambda () ,body)))
 
 ;; And a test that is expected to fail.
-(defmacro-public greg-expect-fail (assertion body)
+(defmacro greg-expect-fail (assertion body)
   `(greg-testcase ,assertion #f (lambda () ,body)))
