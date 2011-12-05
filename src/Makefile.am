@@ -51,7 +51,7 @@ CLEANFILES = $(GOBJECTS)
 lib_LTLIBRARIES = libgreg.la
 
 libgreg_la_SOURCES = libgreg.c libgreg.x
-libgreg_la_LIBADD = -ldl -lz `$(GUILECONFIG) link`
+libgreg_la_LIBADD = -ldl -lz `$(GUILE_CONFIG) link`
 libgreg_la_LDFLAGS = -export-dynamic -version-info @GREG_INTERFACE@
 libgreg_la_DEPENDENCIES = $(LTLIBOBJS)
 
